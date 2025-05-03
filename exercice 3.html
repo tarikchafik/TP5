@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Interactif</title>
+</head>
+<body>
+
+    <h1>Bienvenue au Quiz de developpement frontand</h1>
+    <button onclick="lancerQuiz()">Démarrer le Quiz</button>
+
+    <script>
+        // 1. Préparer les questions
+        const QUESTIONS = [
+    ["Qu'est-ce que HTML ?", "Un langage de balisage utilisé pour structurer une page web"],
+    ["À quoi sert CSS ?", "À styliser et mettre en forme les éléments HTML"],
+    ["Quel langage permet de rendre une page web interactive ?", "JavaScript"],
+    ["Quelle balise HTML est utilisée pour insérer une image ?", "<img>"],
+    ["Que signifie 'responsive design' ?", "Un design qui s'adapte à toutes les tailles d'écran"],
+    ["Quel framework CSS est populaire pour créer des designs responsive rapidement ?", "Bootstrap"],
+    ["Quelle méthode JavaScript permet de sélectionner un élément HTML par son ID ?", "document.getElementById"],
+    ["Quelle extension de fichier est utilisée pour une feuille de style ?", ".css"],
+    ["Quel outil permet de transformer du code moderne JavaScript pour qu'il soit compatible avec les anciens navigateurs ?", "Babel"],
+    ["Quel est le rôle de React.js ?", "Créer des interfaces utilisateur dynamiques"]
+];
+
+        // 2. Fonction principale
+        function lancerQuiz() {
+            let score = 0;
+
+            for (let i = 0; i < QUESTIONS.length; i++) {
+                let question = QUESTIONS[i][0];
+                let reponseCorrecte = QUESTIONS[i][1];
+                let reponseUtilisateur = prompt(question);
+
+                if (reponseUtilisateur !== null) {
+                    if (reponseUtilisateur.trim().toLowerCase() === reponseCorrecte.toLowerCase()) {
+                        alert("Réponse juste !");
+                        score++;
+                    } else {
+                        alert("Réponse fausse !");
+                    }
+                } else {
+                    alert("Question ignorée.");
+                }
+            }
+
+            // 4. Résultat final
+            alert("Vous avez répondu correctement à " + score + " question(s) sur " + QUESTIONS.length);
+        }
+    </script>
+
+</body>
+</html>
