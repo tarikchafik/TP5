@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const nbr_ordinateur = Math.floor(Math.random() * 10) + 1;
+        console.log("Le nombre choisi par l'ordinateur est : " + nbr_ordinateur);
+        let nbr_eturation = 0;
+        let nbr_entrer = false;
+      
+        while (!nbr_entrer) {
+          let nbr_entre2 = parseInt(prompt("Entrer un nouveau nombre entre 1 et 10 :"));
+          nbr_eturation++;
+      
+          if (nbr_entre2 === nbr_ordinateur) {
+            nbr_entrer = true;
+            alert("Bravo ! Tu as trouvé le nombre " + nbr_entre2 + " en " + nbr_eturation + " tentative(s)");
+          } else if (nbr_entre2 > nbr_ordinateur) {
+            alert("Trop grand !");
+          } else if (nbr_entre2 < nbr_ordinateur) {
+            alert("Trop petit !");
+          } else {
+            alert("Entrée invalide. Essaie avec un nombre.");
+          }
+        }
+        </SCript>
+      
+</body>
+</html>
